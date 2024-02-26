@@ -7,6 +7,9 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
+    private val player
+    private val droid
+
     private lateinit var rockButton: Button
     private lateinit var paperButton: Button
     private lateinit var scissorsButton : Button
@@ -18,8 +21,14 @@ class MainActivity : AppCompatActivity() {
 
     private var gameInSession: Boolean = true
 
+    public fun choice {
+        val rock = rockButton
+        val scissors = scissorsButton
+        val paper = paperButton
+    }
+
     private fun checkScissorsWin() : Boolean {
-        if(playerChoice == scissors && droidChoice == paper){
+        if(player.choice == scissors && droid.choice == paper){
                 return true
             }
         }
@@ -35,9 +44,13 @@ class MainActivity : AppCompatActivity() {
         } else if (()){
             return true
         }
+
+        return false
     }
 
     while(gameInSession)
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

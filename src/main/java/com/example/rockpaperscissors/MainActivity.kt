@@ -7,8 +7,8 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    private val player
-    private val droid
+    private var playerMove: String = ""
+    private var droidMove: String = ""
 
     private lateinit var rockButton: Button
     private lateinit var paperButton: Button
@@ -20,40 +20,62 @@ class MainActivity : AppCompatActivity() {
     private lateinit var winText: TextView
 
     private var gameInSession: Boolean = true
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-    public fun choice {
-        val rock = rockButton
-        val scissors = scissorsButton
-        val paper = paperButton
+        rockButton = findViewById(R.id.rockButton)
+        scissorsButton = findViewById(R.id.scissorsButton)
+        paperButton = findViewById(R.id.paperButton)
+        playAgain = findViewById(R.id.playAgain)
     }
 
     private fun checkScissorsWin() : Boolean {
-        if(player.choice == scissors && droid.choice == paper){
-                return true
-            }
+        if(playerMove == "scissors" && droidMove == "paper"){
+            return true
+        }else if(playerMove == "paper" && droidMove == "scissors"){
+            return true
         }
         return false
     }
+
+    private fun checkRockWin() : Boolean {
+        if (playerMove == "rock" && droidMove == "scissors") {
+            return true
+        } else if (playerMove == "scissors" && droidMove == "rock"){
+            return true
+        }
+        return false
+    }
+
+    private fun checkPaperWin() : Boolean {
+        if(playerMove == "paper" && droidMove == "rock"){
+            return true
+        }else if(playerMove == "rock" && droidMove == "paper"){
+            return true
+        }
+        return false
+    }
+
+
     private fun checkForWin() : Boolean {
-        if(()) {
+        if(checkScissorsWin()) {
             return true
-        } else if (()){
+        } else if (checkRockWin()){
             return true
-        } else if (()){
-            return true
-        } else if (()){
+        } else if (checkPaperWin()){
             return true
         }
 
         return false
     }
+
+    fun
+
 
     while(gameInSession)
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+
 }
 

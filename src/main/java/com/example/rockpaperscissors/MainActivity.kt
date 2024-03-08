@@ -70,7 +70,10 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 
-    fun
+    fun rockClicked(view: View){
+        playerMove = "rock"
+        playerText = ''
+    }
 
 
     while(gameInSession)

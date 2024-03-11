@@ -72,9 +72,10 @@ class MainActivity : AppCompatActivity() {
 
     fun rockClicked(view: View){
         playerMove = "rock"
-        playerText = ''
+        playerText.text = "You chose $playerMove"
     }
 
+    droidMove =
 
     while(gameInSession)
 
